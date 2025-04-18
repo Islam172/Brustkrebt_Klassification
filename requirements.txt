@@ -6,3 +6,6 @@ pyaml
 uvicorn
 scikit-learn
 fastapi
+pymongo
+certifi
+python-dotenv
