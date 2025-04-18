@@ -135,11 +135,12 @@ class ModelTrainer:
             test_arr = load_numpy_array_data(test_file_path)
 
             x_train, y_train, x_test, y_test = (
-               train_arr[:, 1:],                 # Features
-               train_arr[:, 0].astype(int),     # Target column as integer
-               test_arr[:, 1:],
-               test_arr[:, 0].astype(int),
-)
+               train_arr[:, :-1],                 # Features (all columns except last)
+               train_arr[:, -1].astype(int),     # Target column is last
+               test_arr[:, :-1],
+               test_arr[:, -1].astype(int),
+
+               )
 
 
             model_trainer_artifact = self.train_model(x_train, y_train, x_test, y_test)

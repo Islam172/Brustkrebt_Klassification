@@ -9,3 +9,4 @@ fastapi
 pymongo
 certifi
 python-dotenv
+python-multipart
