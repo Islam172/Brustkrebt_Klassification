@@ -48,7 +48,7 @@ def get_requirements() -> List[str]:
 # Define the setup function for packaging the project
 setup(
     # The name of the package
-    name="NetworkSecurity",
+    name="brustkrebs",
     
     # The version of the package
     version="0.0.1",

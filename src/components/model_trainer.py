@@ -116,6 +116,7 @@ class ModelTrainer:
 
     def track_mlflow(self, best_model, classificationmetric):
         try:
+            mlflow.set_tracking_uri("http://localhost:5001")
             with mlflow.start_run():
                 mlflow.log_metric("f1_score", classificationmetric.f1_score)
                 mlflow.log_metric("precision", classificationmetric.precision_score)
@@ -136,7 +137,7 @@ class ModelTrainer:
 
             x_train, y_train, x_test, y_test = (
                train_arr[:, :-1],                 # Features (all columns except last)
-               train_arr[:, -1].astype(int),     # Target column is last
+               train_arr[:, -1].astype(int),     # Target column 
                test_arr[:, :-1],
                test_arr[:, -1].astype(int),
 

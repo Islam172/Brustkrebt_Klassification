@@ -53,9 +53,9 @@ class DataIngestion:
             # Replace "na" strings with NaN
             df.replace({"na": np.nan}, inplace=True)
             
-            return df  # Return the DataFrame
+            return df  
         except Exception as e:
-            raise CustomException(e, sys)  # Handle exceptions with a custom exception
+            raise CustomException(e, sys)  
         
     def export_data_into_feature_store(self, dataframe: pd.DataFrame):
         """
@@ -143,5 +143,4 @@ class DataIngestion:
             
 
 
-        except Exception as e:
-            raise CustomException(e,sys)
+        
